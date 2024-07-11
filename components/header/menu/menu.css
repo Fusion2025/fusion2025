@@ -1,0 +1,254 @@
+/* Estilos para o menu horizontal */
+nav {
+    font-family: 'Source Sans Pro Regular',  sans-serif;    
+    padding: 5px 0; /*10px 0*/
+    z-index: 1; /* Para garantir que o menu esteja acima do vídeo */
+    position: absolute; /* Define o posicionamento absoluto para o menu */
+    bottom: 0px; /* Alinha o menu no topo da página */
+    /* background-color:  #005047; */
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+}
+nav ul li {
+    position: relative;
+    display: inline;
+    /* margin-right: 20px; */
+    border-right: 1px solid #fff;
+}
+
+nav ul li:last-child {
+    border-right: none;
+  }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px 12px; /* Adiciona preenchimento ao link */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+/* Estilos para o link ativo */
+nav ul li a.active {
+    color: #F2C511;
+    /* text-decoration: underline #b8f5cf; */
+}
+.buttonClickable:hover a{
+    color: #F2C511;
+    /* text-decoration: underline #b8f5cf; */
+}
+
+.subMenu {
+  list-style-type: none;
+  display: none; /* Esconde a sublista por padrão */
+  flex-direction: column;
+  align-items: flex-start;
+  
+  position: absolute;
+  
+  background-color: #008269;
+  color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  
+  padding: 10px;
+  line-height: 24px;
+  width: 175px;
+  left: 0;
+  top: -125px;/* Posiciona a sublista abaixo do item pai */
+  z-index: 100000000; /* Garante que a sublista fique acima dos demais elementos */
+}
+
+.subMenu li:hover a {
+  color: #F2C511;
+}
+
+.subMenu li{
+  border: none;
+}
+.buttonSubMenu:hover .subMenu{
+  display: flex;
+}
+
+/* Estilos para o menu mobile */
+
+.menu-hamburger{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #menu-hamburguer-elements{
+    display: none;
+    /* overflow-y: scroll; */
+  }
+  
+  #menu-hamburguer-elements li{
+    list-style: none;
+    margin: 2.5vh 0;
+    font-size: 1rem;
+    list-style: none;
+    border: none;
+  }
+  
+  #menu-hamburguer-elements a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  #menu-hamburguer-elements a:hover{
+    color: #F2C511
+  }
+
+  #menu-hamburguer-elements a.active {
+    color: #F2C511;    
+}
+  
+  
+  /* BOTÃO MENU HAMBURGUER */
+  .menu {
+    width: 60px;
+    height: 60px;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .hamburguer {
+    position: relative;
+    display: block;
+    background: #fff;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .hamburguer:before,
+  .hamburguer:after {
+    background: #ffff;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .hamburguer:before {
+    top: -10px;
+  }
+  
+  .hamburguer:after {
+    bottom: -10px;
+  }
+  
+  input {
+    display: none;
+  }
+  
+  /* rotação dos elementos do span */
+  input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+  }
+  
+  input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  
+  input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+  
+  input:checked ~ #menu-hamburguer-elements{
+    right: 0;
+  }
+
+
+
+  /* Estilos para dispositivos com largura até 600px (smartphones em modo retrato) */
+@media only screen and (max-width: 600px) {
+    nav{
+        display: none;
+    }
+
+    .menu{
+        display: flex;
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu-hamburger{
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        align-self: flex-start;
+        overflow: auto;
+        z-index: 6;
+        color: white;
+    }
+  
+    #menu-hamburguer-elements{
+        white-space: nowrap;
+        /* overflow-y: scroll; */
+        /* width: 15vh; */
+        height: 100vh;
+        /* background-color: rgba(10,10,10,.9); */
+        background-color: #01634aa1;
+        position: fixed;
+        right: -80%;
+        top: 0;
+        
+        transition: right cubic-bezier(1,0,0,1) .8s;
+        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    
+        /* padding-top: 15vh; */
+    
+        z-index: 20;
+    }
+
+    #menu-hamburguer-elements a{
+      font-size: 1.5vh;
+    }
+  }
+  
+  /* Estilos para dispositivos com largura entre 601px e 900px (smartphones em modo paisagem e tablets em modo retrato) */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    nav{
+        display: block;
+        font-size: 10px;
+    }
+    nav ul li a {
+        font-size: 12px;
+    }
+  }
+  
+  /* Estilos para dispositivos com largura entre 901px e 1200px (tablets em modo paisagem e desktops) */
+  @media only screen and (min-width: 901px) and (max-width: 1200px) {
+    nav{
+        display: block;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+  }
+  
+  /* Estilos para dispositivos com largura acima de 1200px (desktops grandes e telas largas) */
+  @media only screen and (min-width: 1201px) {
+    nav{
+        display: block;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+  }

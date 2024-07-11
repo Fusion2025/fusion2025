@@ -1,0 +1,144 @@
+#header {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  #video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    padding-top: 55vh;
+  }
+
+  #imgFusionHeader {
+    width: 18vh; /* 30vh 15vh*/
+    margin-left: 5vh;
+    margin-top: 1vh; /* 12vh 4vh*/
+    position: absolute;
+    z-index: 2;
+  }
+
+  #traco_cabecalho {
+    position: absolute;
+    /* right: 5px;
+    width: 100%; */
+    height: 100%;
+    /* top: 20vh;
+    width: 100%;
+    height: 30vh;
+    position: absolute; */
+  }
+
+  #traco_cabecalho_solo{
+    /* height: 123%; */
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+  }
+
+@media only screen and (max-width: 389px) {
+  body{
+    overflow-x: hidden
+  }
+  #video-bg {
+    /* padding-top: 100vh; */
+    top: 60%;
+    padding-right: 85vh;
+  }
+  #imgFusionHeader{
+    display: none;
+  }
+  #traco_cabecalho_solo{
+    display: none;
+  }
+}
+    
+/* Estilos para dispositivos com largura até 600px (smartphones em modo retrato) */
+@media only screen and (min-width: 390px) and (max-width: 600px) {
+  body{
+    overflow-x: hidden
+  }
+  #video-bg {
+    /* padding-top: 100vh; */
+    top: 60%;
+    padding-right: 85vh;
+  }
+  #imgFusionHeader{
+    display: none;
+  }
+  #traco_cabecalho_solo{
+    display: none;
+  }
+}
+
+/* Estilos para dispositivos com largura entre 601px e 900px (smartphones em modo paisagem e tablets em modo retrato) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  body{
+    overflow-x: hidden
+  }
+  #video-bg {
+    /* padding-top: 100vh; */
+    top: 60%;
+    padding-right: 80vh;
+  }
+  #traco_cabecalho{
+    display: none;
+  }
+  #traco_cabecalho_solo{
+    /* height: 144%; */
+    bottom: 0;
+    width: 113vh; /*100vh*/
+  }
+}
+
+/* Estilos para dispositivos com largura entre 901px e 1200px (tablets em modo paisagem e desktops) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  body{
+    overflow-x: hidden
+  }
+  #video-bg {
+    /* padding-top: 100vh; */
+    top: 50%;
+    padding-right: 65vh;
+  }
+  #traco_cabecalho{
+    display: none;
+  }
+  #traco_cabecalho_solo{
+    /* height: 144%; */
+    bottom: 0;
+    width: 113vh; /*100vh*/
+  }
+}
+
+/* Estilos para dispositivos com largura acima de 1200px (desktops grandes e telas largas) até 1880px*/
+@media only screen and (min-width: 1201px) and (max-width: 1880px){
+  #video-bg {
+    top: 60%;
+  }
+  #traco_cabecalho{
+    display: none;
+  }
+  #traco_cabecalho_solo{
+    /* height: 84vh; */
+    bottom: 0;
+    width: 113vh; /*11vh*/
+  }
+}
+
+@media only screen and (min-width: 1880px){
+  #video-bg {
+    top: 60%;
+  }
+  #traco_cabecalho{
+    display: none;
+  }
+}
